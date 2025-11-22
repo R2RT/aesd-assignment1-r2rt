@@ -1,0 +1,13 @@
+diff --git a/test/assignment1/assignment-test.sh b/test/assignment1/assignment-test.sh
+index 72a043d..36f1ba4 100755
+--- a/test/assignment1/assignment-test.sh
++++ b/test/assignment1/assignment-test.sh
+@@ -27,7 +27,7 @@ if [ $rc -ne 0 ]; then
+ fi
+ 
+ # generate directory name from random string
+-dir_name=$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w32 | head -n 1)
++dir_name=$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | head -c 32)
+ ./finder-test.sh 10 AELD_IS_FUN $dir_name
+ 
+ rc=$?

@@ -20,5 +20,7 @@ jobs:
           - uses: actions/checkout@v2
           - name: Checkout submodules
             run : git submodule update --init --recursive
+          - name: Patch /dev/urandom usage
+            run: cd assignment-autotest && git apply ../.github/patches/urandom.patch
           - name: Run full test
             run: ./full-test.sh
